@@ -1,0 +1,27 @@
+service_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ServiceBundle:Default:index }
+service_ajout:
+    path:     /ajout
+    defaults: { _controller: ServiceBundle:Service:ajout }
+    
+service_offre:
+    path:     /offre
+    defaults: { _controller: ServiceBundle:Service:offre }
+    
+service_modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: ServiceBundle:Service:modifier }
+    
+service_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: ServiceBundle:Service:supprimer }
+    
+service_contacter:
+    path:     /contacter
+    defaults: { _controller: ServiceBundle:Service:contacter }
+    
+service_mesServices:
+    path:     /mesServices/{iduser}
+    defaults: { _controller: ServiceBundle:Service:mesServices}
+    

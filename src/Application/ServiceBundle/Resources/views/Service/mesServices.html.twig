@@ -1,0 +1,17 @@
+{# empty Twig template #}
+<div name="Service"><h1>Les services disponibles</h1></div>
+
+{% for c in serv%}
+
+<label><b>Nom :</b></label><label name="nom">{{c.nomService}}</label><br>
+<label><b>Date d'ajout:</b></label><label name="dateAjout">{{c.dateAjout|date('m/d/Y')}}</label><br>
+<label><b>Description :</b></label><label name="decription">{{c.description}}</label><br>
+<label><b>zone:</b></label><label name="zone">{{c.zone.nom}}</label><br>
+<label><b>Etat:</b></label><label name="etat">{{c.etat}}</label><br>
+<a href="{{path('service_modifier', {'id':c.id})}}">Modifier </a>
+<a href="{{path('service_supprimer', {'id':c.id})}}">Supprimer </a>
+
+
+{% endfor %}
+
+

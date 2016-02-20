@@ -1,0 +1,15 @@
+{% extends 'ProduitBundle::layout2.html.twig' %}
+{% block t %}
+    <h1> modifier votre Produit</h1>
+<form action=""  method="post" > 
+    <table>  
+        <tr> <td> categorie </td> <td> {{ form_widget(Form.categorie) }}</td> </tr>
+        <tr> <td> titre </td> <td> {{ form_widget(Form.titre) }}</td> </tr>
+        <tr> <td> description </td> <td> {{ form_widget(Form.description) }}</td> </tr>
+        <tr> <td> prix </td> <td> {{ form_widget(Form.prix) }}</td> </tr>
+        <tr> <td> gouvernorat </td> <td> {{ form_widget(Form.gouvernorat) }}</td> </tr>
+        <tr> <td> {{ form_rest(Form) }}</td>  </td> </tr>
+    </table>
+    </form>
+    
+{% endblock %}

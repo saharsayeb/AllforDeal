@@ -1,0 +1,20 @@
+{% extends 'ProduitBundle::layout2.html.twig' %}
+{% block t %}
+ <header class="page-header"><h1>Les produits disponibles</h1>
+  </header>
+    <div name="Service" class="box-lg">
+{% for p in Produit %}
+    <fieldset >
+        <legend >Categorie :{{p.categorie}}</legend>
+        <label><b>titre :</b></label><label name="nom">{{p.titre}}</label><br>
+        <label><b>description :</b></label><label name="decription">{{p.description}}</label><br>
+        <label><b>prix :</b></label><label name="prix">{{p.prix}}</label><br>
+        <label><b>gouvernorat:</b></label><label name="gouvernorat">{{p.zone.nom}}</label><br>
+         <a class="btn btn-lg btn-ghost btn-black" href="{{ path('produit_supprimerP',{'id':p.id}) }}"> Supprimer </a>
+       <a class="btn btn-lg btn-ghost btn-black" href="{{ path('produit_modifierP',{'id':p.id}) }}"> Modifier </a>
+
+    </fieldset>
+
+{% endfor %}
+    </div>
+{% endblock %}

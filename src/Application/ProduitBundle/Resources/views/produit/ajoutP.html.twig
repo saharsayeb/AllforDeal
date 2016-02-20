@@ -1,0 +1,36 @@
+{% extends 'ProduitBundle::layout2.html.twig' %}
+{% block t %}
+    
+    <header class="page-header">
+    <h1>Ajouter un produit</h1>
+    </header>
+        <div name="Service" class="box-lg">
+<form action=""  method="post" > 
+ <div class="form-group">
+                    <label>Catégorie</label>
+                    <input class="form-control" {{ form_widget(Form.categorie)}}
+                </div>
+                <div class="form-group">
+                    <label>titre</label>
+                    <input class="form-control" {{ form_widget(Form.titre)}}
+                </div>
+                <div class="form-group">
+                    <label>description</label>
+                    <!--<textarea class="form-control"{{ form_widget(Form.description) }}</textarea>-->
+              
+                    <input {{ form_widget(Form.description)  | format_text('markdown') }}/>
+                </div>
+                 <div class="form-group">
+                    <label>prix</label>
+                    <input class="form-control" {{ form_widget(Form.prix) }}
+                </div>
+                    <div class="form-group"> <label>  Gouvernerat </label><input class="navbar-main-search-category-select" <option> {{ form_widget(Form.zone) }}</option></div>
+                    
+     <input class="btn btn-primary" type="submit" value="Ajouter Produit" action={{ form_rest(Form) }}
+                    
+    </form>{# empty Twig template #}
+        
+</div>
+        
+{% endblock %}
+

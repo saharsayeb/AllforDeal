@@ -1,0 +1,15 @@
+produit_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProduitBundle:Default:index }
+produit_ajout:
+    path:     /ajout
+    defaults: { _controller: ProduitBundle:Produit:ajout }
+produit_afficheP:
+    path:     /afficheP
+    defaults: { _controller: ProduitBundle:Produit:afficheP }
+produit_supprimerP:
+    path:     /supprimerP/{id}
+    defaults: { _controller: ProduitBundle:Produit:supprimerP }
+produit_modifierP:
+    path:     /modifierP/{id}
+    defaults: { _controller: ProduitBundle:Produit:modifierP }
