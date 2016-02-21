@@ -981,12 +981,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form navbar-left navbar-main-search" role="search">
+                  {#  <form class="navbar-form navbar-left navbar-main-search" role="search">
+                        
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Search the Entire Store..." />
+                            <input class="form-control" type="text" placeholder="rechercher" />
                         </div>
                         <a class="fa fa-search navbar-main-search-submit" href="#"></a>
-                    </form>
+                    </form>#}
+                  {% block x %}
+                      {%endblock %}
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#nav-login-dialog" data-effect="mfp-move-from-top" class="popup-text">Sign In</a>
                         </li>
@@ -1048,9 +1051,9 @@
         </nav>
 
         <div class="container">
-           {% block t %}
-            <div class="gap"></div>
-            {% endblock %}
+           
+            <div class="gap">{% block t %}{% endblock %}</div>
+            
         </div>
 
         <footer class="main-footer">

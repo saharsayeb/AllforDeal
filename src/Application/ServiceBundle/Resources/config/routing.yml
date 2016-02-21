@@ -25,3 +25,9 @@ service_mesServices:
     path:     /mesServices/{iduser}
     defaults: { _controller: ServiceBundle:Service:mesServices}
     
+service_recherche:
+    path:     /recherche
+    defaults: { _controller: ServiceBundle:Service:recherche}
+    
+
+    

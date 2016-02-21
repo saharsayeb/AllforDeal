@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use  Application\ServiceBundle\Entity\Service;
 use  Application\ServiceBundle\Form\ajoutForm;
 use  Application\ServiceBundle\Form\modifierForm;
+use  Application\ServiceBundle\Form\rechercheForm;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -89,4 +90,28 @@ class ServiceController extends Controller
        
         return $this->render('ServiceBundle:Service:mesServices.html.twig', array('serv'=> $serv));
     }
+    
+    public function rechercheAction() {
+        $req=$this->getRequest();
+        if($req->getMethod()=="POST")
+        {
+            $nomService=$req->get('nomService');
+         
+        
+        $em=$this->getDoctrine()->getManager();
+        $serv=$em->getRepository('ServiceBundle:Service')->findByNomService($nomService);
+        
+        return $this->render('ServiceBundle:Service:recherche.html.twig', array('serv'=> $serv));
+            
+        }
+ else {
+     
+ }
+      $em=$this->getDoctrine()->getManager(); 
+       $serv=$em->getRepository('ServiceBundle:Service')->findAll();
+       
+        return $this->render('ServiceBundle:Service:recherche.html.twig', array('serv'=> $serv));
+       
+    }
+    
 }
